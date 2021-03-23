@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<div class="detalle-entry">
+    <h2> {{ album2.name }} </h2>
+    <p> {{ album2.image }} </p>
+</div>
+
+<a href="{% url 'libroEditar' album2.pk %}"> Editar libro</a>
+<br>
+<a href="{% url 'libroEliminar' album2.pk %}">Eliminar libro</a> {% endblock content %}

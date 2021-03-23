@@ -1,21 +1,25 @@
-{% extends 'base.html' %}
-{% load static %}
-{%block content %}
+{% extends 'base.html' %} {% load static %} {%block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <h2>Sagas</h2>
     {% for a in album %}
-<div class="container">
-    <h2>{{a.owner}}</h2>
-    <a href="{% url 'libros' %}"><h3>{{a.saga}}</h3></a>
-</div>
-{% endfor %}
+    <div class="container">
+
+        <a href="{% url 'libros' %}">
+            <h3>{{a.saga}}</h3>
+        </a>
+    </div>
+    {% endfor %}
 </body>
+
 </html>
 {% endblock content %}

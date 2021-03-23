@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Album(models.Model):
     autores = (
@@ -12,7 +13,7 @@ class Album(models.Model):
     def __str__(self):
         return self.saga
 
-
+    
 
 class AlbumImage(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
@@ -21,3 +22,5 @@ class AlbumImage(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('libroDetalle', args=[str(self.id)])
